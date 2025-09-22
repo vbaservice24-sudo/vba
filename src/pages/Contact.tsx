@@ -6,10 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock, Upload, Loader2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Loader2 } from "lucide-react";
 import { db } from "@/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -21,18 +20,12 @@ const Contact = () => {
     issueDescription: "",
     location: "",
   });
-  const [photo, setPhoto] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [requestDate, setRequestDate] = useState<string>("");
   const { toast } = useToast();
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) setPhoto(file);
   };
 
   const getCurrentLocation = () => {
@@ -66,14 +59,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      let photoURL: string | null = null;
-
-      if (photo) {
-        const storage = getStorage();
-        const storageRef = ref(storage, `breakdown_photos/${Date.now()}_${photo.name}`);
-        await uploadBytes(storageRef, photo);
-        photoURL = await getDownloadURL(storageRef);
-      }
+      const photoURL = null; // photo upload removed
 
       const requestData = {
         requestNumber: `VBA-${Date.now()}`,
@@ -83,7 +69,7 @@ const Contact = () => {
         vehicleType: formData.vehicleType,
         issueDescription: formData.issueDescription,
         location: formData.location,
-        photo: photoURL || null,
+        photo: photoURL,
         status: "pending",
         timestamp: serverTimestamp(),
         requestDate,
@@ -109,7 +95,6 @@ const Contact = () => {
 
       // Reset form
       setFormData({ name: "", phone: "", email: "", vehicleType: "", issueDescription: "", location: "" });
-      setPhoto(null);
       setRequestDate("");
 
     } catch (error) {
@@ -252,28 +237,6 @@ const Contact = () => {
                       className="bg-input border-border text-foreground min-h-[120px]"
                       required
                     />
-                  </div>
-
-                  {/* Photo Upload */}
-                  <div className="space-y-2">
-                    <Label htmlFor="photo" className="text-foreground">
-                      Upload Photo (Optional)
-                    </Label>
-                    <div className="flex items-center space-x-4">
-                      <Input
-                        id="photo"
-                        type="file"
-                        accept="image/*"
-                        onChange={handlePhotoUpload}
-                        className="bg-input border-border text-foreground"
-                      />
-                      {photo && (
-                        <div className="flex items-center space-x-2 text-workshop-orange">
-                          <Upload className="w-4 h-4" />
-                          <span className="text-sm">{photo.name}</span>
-                        </div>
-                      )}
-                    </div>
                   </div>
 
                   {/* Submit Button */}
