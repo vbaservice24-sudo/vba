@@ -69,15 +69,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-workshop-orange" />
-                <span className="text-sm text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-sm text-muted-foreground">+91 8489459699</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-workshop-orange" />
-                <span className="text-sm text-muted-foreground">help@vba.com</span>
+                <span className="text-sm text-muted-foreground">vbaservice24@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-workshop-orange" />
-                <span className="text-sm text-muted-foreground">Nationwide Service</span>
+                <span className="text-sm text-muted-foreground">Coimbatore</span>
               </div>
             </div>
           </div>

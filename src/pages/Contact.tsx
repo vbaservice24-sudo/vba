@@ -273,14 +273,14 @@ const Contact = () => {
                   <Phone className="w-5 h-5 text-workshop-orange" />
                   <div>
                     <p className="font-semibold text-foreground">24/7 Hotline</p>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+91 8489459699</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-workshop-orange" />
                   <div>
                     <p className="font-semibold text-foreground">Email Support</p>
-                    <p className="text-muted-foreground">emergency@vba.com</p>
+                    <p className="text-muted-foreground">vbaservice24@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
