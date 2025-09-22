@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vehicle Breakdown Assistant - Mechanic Workshop Theme */
+
+@layer base {
+  :root {
+    /* Base colors - Dark workshop theme */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary - Safety Orange */
+    --primary: 18 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Warning Yellow */
+    --secondary: 51 100% 50%;
+    --secondary-foreground: 0 0% 8%;
+
+    /* Muted tones */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Accent - Bright Orange */
+    --accent: 18 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 18 100% 60%;
+
+    /* Workshop specific colors */
+    --workshop-steel: 210 6% 25%;
+    --workshop-orange: 18 100% 60%;
+    --workshop-yellow: 51 100% 50%;
+    --workshop-dark: 0 0% 8%;
+    --workshop-light: 0 0% 95%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(18 100% 60%), hsl(18 95% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%), hsl(0 0% 12%));
+
+    /* Shadows */
+    --shadow-workshop: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    --shadow-orange: 0 5px 20px hsl(18 100% 60% / 0.3);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 18 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 51 100% 50%;
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 18 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 18 100% 60%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 18 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 18 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
